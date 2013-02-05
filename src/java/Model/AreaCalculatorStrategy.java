@@ -13,4 +13,7 @@ public interface AreaCalculatorStrategy {
 
     public abstract double getArea();
 
+    public abstract void setRadius(String circleRadius);
+    
+    public abstract void setRectangleSides(String Length, String Width);
 }

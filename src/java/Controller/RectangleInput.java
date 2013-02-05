@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "RectangleInput", urlPatterns = {"/RectangleInput"})
 public class RectangleInput extends HttpServlet {
 
-    private static final String RESULT_PAGE = "/ResultPage.jsp";
+    private static final String RESULT_PAGE = "/RectangleResult.jsp";
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
