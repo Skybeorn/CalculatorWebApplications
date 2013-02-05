@@ -1,3 +1,5 @@
+package Controller;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -5,31 +7,41 @@
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "TriangleInput", urlPatterns = {"/TriangleInput"})
-public class TriangleInput extends HttpServlet {
+/**
+ *
+ * @author Skybeorn
+ */
+@WebServlet(name = "CircleInput", urlPatterns = {"/CircleInput"})
+public class CircleInput extends HttpServlet {
 
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-
-    }
+    private static final String RESULT_PAGE = "/CircleResult.jsp";
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+
+        response.setContentType("text/html;charset=UTF-8");
+
+        String radius = request.getParameter("radius");
+        double convertedRadius = Double.parseDouble(radius);
+        double area = (convertedRadius * convertedRadius) * Math.PI;
+        request.setAttribute("circleArea", area);
+
+        RequestDispatcher dispatch = request.getRequestDispatcher(RESULT_PAGE);
+        dispatch.forward(request, response);
+
     }
 
     @Override
