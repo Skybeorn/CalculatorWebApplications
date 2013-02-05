@@ -12,11 +12,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ *
+ * @author Skybeorn
+ */
+@WebServlet(name = "CircleInput", urlPatterns = {"/CircleInput"})
+public class CircleInput extends HttpServlet {
 
-@WebServlet(name = "ProcessInput", urlPatterns = {"/ProcessInput"})
-public class ProcessInput extends HttpServlet {
-
-    private static final String RESULT_PAGE = "/ResultPage.jsp";
+    private static final String RESULT_PAGE = "/CircleResult.jsp";
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -28,17 +31,15 @@ public class ProcessInput extends HttpServlet {
             throws ServletException, IOException {
 
         response.setContentType("text/html;charset=UTF-8");
-      
-        String length = request.getParameter("length");
-        String width = request.getParameter("width");
-        double convertedLength = Double.parseDouble(length);
-        double convertedWidth = Double.parseDouble(width);
-        double area = convertedLength * convertedWidth;
-        request.setAttribute("rectangleArea", area);
 
+        String radius = request.getParameter("radius");
+        double convertedRadius = Double.parseDouble(radius);
+        double area = (convertedRadius * convertedRadius) * Math.PI;
+        request.setAttribute("circleArea", area);
 
         RequestDispatcher dispatch = request.getRequestDispatcher(RESULT_PAGE);
         dispatch.forward(request, response);
+
     }
 
     @Override
