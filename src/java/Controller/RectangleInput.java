@@ -27,7 +27,7 @@ public class RectangleInput extends HttpServlet {
             throws ServletException, IOException {
 
         response.setContentType("text/html;charset=UTF-8");
-
+        
         String length = request.getParameter("length");
         String width = request.getParameter("width");
         calc.setRectangleSides(length, width);
