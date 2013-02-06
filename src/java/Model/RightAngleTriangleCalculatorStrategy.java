@@ -8,7 +8,7 @@ package Model;
  *
  * @author Skybeorn
  */
-public interface TriangleCalculatorStrategy {
+public interface RightAngleTriangleCalculatorStrategy {
     
     public void setTriangleSides(String sideA, String sideB, String sideC);
     

@@ -9,17 +9,18 @@ package Model;
  * @author Skybeorn
  */
 public class MissingHypotenuseCalculator implements
-        TriangleCalculatorStrategy {
+        RightAngleTriangleCalculatorStrategy {
 
     private double triangleLegA = 0;
     private double triangleLegB = 0;
     private double triangleLegC = 0;
-    private String NULL_OR_EMPTY_STRING = "Side can not be null or Empty";
+    private String NULL_OR_EMPTY_STRING = "Side Value can not be null or Empty";
+    private int ZERO = 0;
 
     @Override
     public void setTriangleSides(String sideA, String sideB, String sideC) {
 
-        if (sideA == null || sideA.length() == 0) {
+        if (sideA == null || sideA.length() == ZERO) {
             throw new IllegalArgumentException(NULL_OR_EMPTY_STRING);
         } else {
             String x = sideA;
@@ -27,13 +28,15 @@ public class MissingHypotenuseCalculator implements
             triangleLegA = convertedSideA;
         }
 
-        if (sideB == null || sideB.length() == 0) {
+        if (sideB == null || sideB.length() == ZERO) {
             throw new IllegalArgumentException(NULL_OR_EMPTY_STRING);
         } else {
             String x = sideB;
             double convertedSideB = new Double(x);
             triangleLegB = convertedSideB;
         }
+
+  
 
     }
 }
