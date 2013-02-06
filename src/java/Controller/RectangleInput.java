@@ -1,6 +1,7 @@
 package Controller;
 
-
+import Model.AreaCalculatorStrategy;
+import Model.RectangularArea;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 public class RectangleInput extends HttpServlet {
 
     private static final String RESULT_PAGE = "/RectangleResult.jsp";
+    AreaCalculatorStrategy calc = new RectangularArea();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -28,11 +30,9 @@ public class RectangleInput extends HttpServlet {
 
         String length = request.getParameter("length");
         String width = request.getParameter("width");
-        double convertedLength = Double.parseDouble(length);
-        double convertedWidth = Double.parseDouble(width);
-        double area = convertedLength * convertedWidth;
+        calc.setRectangleSides(length, width);
+        double area = calc.getArea();
         request.setAttribute("rectangleArea", area);
-
         RequestDispatcher dispatch = request.getRequestDispatcher(RESULT_PAGE);
         dispatch.forward(request, response);
     }

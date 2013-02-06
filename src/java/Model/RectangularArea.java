@@ -24,7 +24,7 @@ public class RectangularArea implements AreaCalculatorStrategy {
             throw new IllegalArgumentException(BAD_ARGUMENT);
         } else {
             String x = length;
-            Double convertedRadius = new Double(x);
+            double convertedRadius = new Double(x);
             sideOne = convertedRadius;
         }
 
@@ -32,11 +32,11 @@ public class RectangularArea implements AreaCalculatorStrategy {
             throw new IllegalArgumentException(BAD_ARGUMENT);
         } else {
             String x = width;
-            Double convertedRadius = new Double(x);
+            double convertedRadius = new Double(x);
             sideTwo = convertedRadius;
         }
 
-        if (sideOne != 0 && sideTwo != 0) {
+        if (sideOne == 0 && sideTwo == 0) {
             throw new IllegalArgumentException(SIDE_EQUAL_TO_ZERO);
         } else {
             area = sideOne * sideTwo;

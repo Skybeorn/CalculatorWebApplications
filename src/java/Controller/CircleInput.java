@@ -4,7 +4,8 @@ package Controller;
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
+import Model.AreaCalculatorStrategy;
+import Model.CircularArea;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -22,6 +23,7 @@ import javax.servlet.http.HttpServletResponse;
 public class CircleInput extends HttpServlet {
 
     private static final String RESULT_PAGE = "/CircleResult.jsp";
+    AreaCalculatorStrategy calc = new CircularArea();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -35,8 +37,8 @@ public class CircleInput extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
         String radius = request.getParameter("radius");
-        double convertedRadius = Double.parseDouble(radius);
-        double area = (convertedRadius * convertedRadius) * Math.PI;
+        calc.setRadius(radius);
+        double area = calc.getArea();
         request.setAttribute("circleArea", area);
 
         RequestDispatcher dispatch = request.getRequestDispatcher(RESULT_PAGE);

@@ -1,18 +1,12 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package Model;
 
-/**
- *
- * @author Skybeorn
- */
 public class CircularArea implements AreaCalculatorStrategy {
 
     private double area = 0;
     private double radius = 0;
     private String BAD_ARGUMENT = "Radius can not be Null or Empty!!";
+    private String RADIUS_EQUAL_TO_ZERO = "It is impossibile for a circle to"
+            + " have an Area Value when the radisu is Zero";
 
     public CircularArea() {
     }
@@ -31,7 +25,12 @@ public class CircularArea implements AreaCalculatorStrategy {
             Double convertedRadius = new Double(x);
             radius = convertedRadius;
         }
-        area = Math.PI * radius * radius;
+        if (radius == 0) {
+            throw new IllegalArgumentException(RADIUS_EQUAL_TO_ZERO);
+        } else {
+            area = Math.PI * radius * radius;
+        }
+
     }
 
     @Override
