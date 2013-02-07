@@ -113,7 +113,7 @@
                             Object hypotenuseResult = request.getAttribute("hypotenuse");
                             String hypotenuse = "";
                             if (hypotenuseResult != null) {
-                                circleArea = hypotenuseResult.toString();
+                                hypotenuse = hypotenuseResult.toString();
                                 out.print("Answer: " + hypotenuse);
                             }
                         %>

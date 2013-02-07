@@ -19,11 +19,12 @@ public class MissingHypotenuseCalculator implements
             + " Cannot be Zero";
     private int ZERO = 0;
 
+    @Override
     public double getHypotenuse() {
         if (triangleLegA == ZERO || triangleLegB == ZERO) {
             throw new IllegalArgumentException(VALUE_CAN_NOT_BE_ZERO);
         }
-        triangleLegC = Math.pow(triangleLegA, 2) + Math.pow(triangleLegB, 2);
+        triangleLegC = Math.sqrt(Math.pow(triangleLegA, 2) + Math.pow(triangleLegB, 2));
         return triangleLegC;
     }
 
