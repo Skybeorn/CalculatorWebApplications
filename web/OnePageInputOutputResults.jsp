@@ -12,7 +12,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
-        <form id="one" name="one" method="POST" action="RectangleInput">
+        <form id="one" name="one" method="POST" 
+              action="FrontServeltController?action=RectangleInput">
             <table border="1" width="230">
                 <tr>
                     <td align="center">
@@ -50,7 +51,8 @@
             <hr width="230" align="left">
         </form>
 
-        <form id="two" name="two" method="POST" action="CircleInput"> 
+        <form id="two" name="two" method="POST" 
+              action="FrontServeltController?action=CircleInput"> 
 
             <table border="1" width="230">
                 <tr>
@@ -84,7 +86,8 @@
             <hr width="230" align="left">
         </form>
 
-        <form id="three" name="three" method="POST" action="TriangleInput"> 
+        <form id="three" name="three" method="POST" 
+              action="FrontServeltController?action=TriangleInput"> 
 
             <table border="1" width="230">
                 <tr>
