@@ -13,7 +13,7 @@
     </head>
     <body>
         <form id="one" name="one" method="POST" 
-              action="FrontServeltController?action=RectangleInput">
+              action="FrontServletController?action=RectangleInput">
             <table border="1" width="230">
                 <tr>
                     <td align="center">
@@ -52,7 +52,7 @@
         </form>
 
         <form id="two" name="two" method="POST" 
-              action="FrontServeltController?action=CircleInput"> 
+              action="FrontServletController?action=CircleInput"> 
 
             <table border="1" width="230">
                 <tr>
@@ -87,7 +87,7 @@
         </form>
 
         <form id="three" name="three" method="POST" 
-              action="FrontServeltController?action=TriangleInput"> 
+              action="FrontServletController?action=TriangleInput"> 
 
             <table border="1" width="230">
                 <tr>
