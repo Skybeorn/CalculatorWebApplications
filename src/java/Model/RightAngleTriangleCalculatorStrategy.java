@@ -12,4 +12,6 @@ public interface RightAngleTriangleCalculatorStrategy {
     
     public void setTriangleSides(String sideA, String sideB, String sideC);
     
+    public double getHypotenuse();
+    
 }

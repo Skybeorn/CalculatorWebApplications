@@ -94,17 +94,29 @@
                 </tr>
                 <tr>
                     <td align="center">
-                        Side 1: <input type="text" name="length">
+                        Side 1: <input type="text" name="sideA">
                     </td>
                 </tr>
                 <tr>
                     <td align="center">
-                        Side 2: <input type="text" name="width">
+                        Side 2: <input type="text" name="sideB">
                     </td>
                 </tr>
                 <tr>
                     <td align="center">
                         <input type="submit" value="Calculate!">
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">            
+                        <%
+                            Object hypotenuseResult = request.getAttribute("hypotenuse");
+                            String hypotenuse = "";
+                            if (hypotenuseResult != null) {
+                                circleArea = hypotenuseResult.toString();
+                                out.print("Answer: " + hypotenuse);
+                            }
+                        %>
                     </td>
                 </tr>
             </table>
