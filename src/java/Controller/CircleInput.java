@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "CircleInput", urlPatterns = {"/CircleInput"})
 public class CircleInput extends HttpServlet {
 
-    private static final String RESULT_PAGE = "/CircleResult.jsp";
+    private static final String RESULT_PAGE = "/OnePageInputOutputResults.jsp";
     AreaCalculatorStrategy calc = new CircularArea();
 
     @Override

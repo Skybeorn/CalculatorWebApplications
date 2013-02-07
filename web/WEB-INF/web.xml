@@ -6,6 +6,7 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
+        <welcome-file>OnePageInputOutputResults.jsp</welcome-file>
         <welcome-file>Input.html</welcome-file>
     </welcome-file-list>
 </web-app>

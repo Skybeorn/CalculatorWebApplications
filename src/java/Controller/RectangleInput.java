@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "RectangleInput", urlPatterns = {"/RectangleInput"})
 public class RectangleInput extends HttpServlet {
 
-    private static final String RESULT_PAGE = "/RectangleResult.jsp";
+    private static final String RESULT_PAGE = "/OnePageInputOutputResults.jsp";
     AreaCalculatorStrategy calc = new RectangularArea();
 
     @Override
@@ -33,6 +33,8 @@ public class RectangleInput extends HttpServlet {
         calc.setRectangleSides(length, width);
         double area = calc.getArea();
         request.setAttribute("rectangleArea", area);
+        
+        
         RequestDispatcher dispatch = request.getRequestDispatcher(RESULT_PAGE);
         dispatch.forward(request, response);
     }
