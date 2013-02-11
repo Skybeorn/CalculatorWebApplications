@@ -1,4 +1,4 @@
-package Model;
+package Model.Interfaces;
 
 /*
  * To change this template, choose Tools | Templates
@@ -9,11 +9,8 @@ package Model;
  *
  * @author Skybeorn
  */
-public interface AreaCalculatorStrategy {
+public interface IAreaCalculator {
 
     public abstract double getArea();
-
-    public abstract void setRadius(String circleRadius);
     
-    public abstract void setRectangleSides(String Length, String Width);
 }

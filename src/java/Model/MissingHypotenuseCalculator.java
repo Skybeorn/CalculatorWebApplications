@@ -4,12 +4,15 @@
  */
 package Model;
 
+import Model.Interfaces.ITriangleHypotenuse;
+import Model.Interfaces.ITriangleSides;
+
 /**
  *
  * @author Skybeorn
  */
 public class MissingHypotenuseCalculator implements
-        RightAngleTriangleCalculatorStrategy {
+        ITriangleHypotenuse, ITriangleSides {
 
     private double triangleLegA = 0;
     private double triangleLegB = 0;

@@ -1,6 +1,9 @@
 package Model;
 
-public class CircularArea implements AreaCalculatorStrategy {
+import Model.Interfaces.IAreaCalculator;
+import Model.Interfaces.ICircleRadius;
+
+public class CircularArea implements IAreaCalculator, ICircleRadius {
 
     private double area = 0;
     private double radius = 0;
@@ -31,9 +34,5 @@ public class CircularArea implements AreaCalculatorStrategy {
             area = Math.PI * radius * radius;
         }
 
-    }
-
-    @Override
-    public void setRectangleSides(String sideOne, String sideTwo) {
     }
 }

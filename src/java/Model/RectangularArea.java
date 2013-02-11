@@ -1,6 +1,9 @@
 package Model;
 
-public class RectangularArea implements AreaCalculatorStrategy {
+import Model.Interfaces.IAreaCalculator;
+import Model.Interfaces.IRectangleSides;
+
+public class RectangularArea implements IAreaCalculator, IRectangleSides {
 
     private double area = 0;
     private double sideOne = 0;
@@ -12,10 +15,6 @@ public class RectangularArea implements AreaCalculatorStrategy {
     @Override
     public double getArea() {
         return area;
-    }
-
-    @Override
-    public void setRadius(String circleRadius) {
     }
 
     @Override

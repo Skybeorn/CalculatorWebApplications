@@ -4,7 +4,7 @@ package Controller;
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-import Model.AreaCalculatorStrategy;
+import Model.Interfaces.IAreaCalculator;
 import Model.CircularArea;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -23,7 +23,7 @@ import javax.servlet.http.HttpServletResponse;
 public class CircleInput extends HttpServlet {
 
     private static final String RESULT_PAGE = "/OnePageInputOutputResults.jsp";
-    AreaCalculatorStrategy calc = new CircularArea();
+    CircularArea calc = new CircularArea();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)

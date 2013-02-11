@@ -1,5 +1,5 @@
 
-package Controller;
+package FrontControllers;
 
 import java.io.IOException;
 import java.io.PrintWriter;

@@ -1,6 +1,6 @@
 package Controller;
 
-import Model.AreaCalculatorStrategy;
+import Model.Interfaces.IAreaCalculator;
 import Model.RectangularArea;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 public class RectangleInput extends HttpServlet {
 
     private static final String RESULT_PAGE = "/OnePageInputOutputResults.jsp";
-    AreaCalculatorStrategy calc = new RectangularArea();
+    RectangularArea calc = new RectangularArea();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)

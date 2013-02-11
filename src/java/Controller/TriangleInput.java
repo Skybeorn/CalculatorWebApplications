@@ -5,7 +5,7 @@ package Controller;
  * and open the template in the editor.
  */
 import Model.MissingHypotenuseCalculator;
-import Model.RightAngleTriangleCalculatorStrategy;
+import Model.Interfaces.ITriangleHypotenuse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -18,8 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "TriangleInput", urlPatterns = {"/TriangleInput"})
 public class TriangleInput extends HttpServlet {
 
-    RightAngleTriangleCalculatorStrategy calc =
-            new MissingHypotenuseCalculator();
+    MissingHypotenuseCalculator calc = new MissingHypotenuseCalculator();
     private static final String RESULT_PAGE = "/OnePageInputOutputResults.jsp";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -36,8 +35,6 @@ public class TriangleInput extends HttpServlet {
 
         RequestDispatcher dispatch = request.getRequestDispatcher(RESULT_PAGE);
         dispatch.forward(request, response);
-
-
 
     }
 
