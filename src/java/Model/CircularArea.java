@@ -1,7 +1,7 @@
 package Model;
 
-import Minterfaces.IArea;
-import Minterfaces.ICircleRadius;
+import ModelInterfaces.IArea;
+import ModelInterfaces.ICircleRadius;
 
 public class CircularArea implements IArea, ICircleRadius {
 

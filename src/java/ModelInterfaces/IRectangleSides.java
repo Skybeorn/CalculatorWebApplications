@@ -2,13 +2,13 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Minterfaces;
+package ModelInterfaces;
 
 /**
  *
  * @author Skybeorn
  */
-public interface ICircleRadius {
-      
-    public abstract void setRadius(String circleRadius);
+public interface IRectangleSides {
+
+    public abstract void setRectangleSides(String Length, String Width);
 }

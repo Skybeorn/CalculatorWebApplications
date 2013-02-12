@@ -1,7 +1,7 @@
 package Model;
 
-import Minterfaces.IArea;
-import Minterfaces.IRectangleSides;
+import ModelInterfaces.IArea;
+import ModelInterfaces.IRectangleSides;
 
 public class RectangularArea implements IArea, IRectangleSides {
 

@@ -4,8 +4,8 @@
  */
 package Model;
 
-import Minterfaces.ITriangleHypotenuse;
-import Minterfaces.ITriangleSides;
+import ModelInterfaces.ITriangleHypotenuse;
+import ModelInterfaces.ITriangleSides;
 
 /**
  *
