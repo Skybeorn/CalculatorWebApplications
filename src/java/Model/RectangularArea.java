@@ -1,16 +1,17 @@
 package Model;
 
-import Model.Interfaces.IAreaCalculator;
-import Model.Interfaces.IRectangleSides;
+import Minterfaces.IArea;
+import Minterfaces.IRectangleSides;
 
-public class RectangularArea implements IAreaCalculator, IRectangleSides {
+public class RectangularArea implements IArea, IRectangleSides {
 
     private double area = 0;
     private double sideOne = 0;
     private double sideTwo = 0;
-    private String BAD_ARGUMENT = "Radius can not be Null or Empty!!";
-    private String SIDE_EQUAL_TO_ZERO = "It is impossibile for a Rectangle to"
-            + " have an Area Value when a side is Zero";
+    private final String BAD_ARGUMENT = "Radius can not be Null or Empty!!";
+    private final String SIDE_OUT_OF_BOUNDS = "It is impossibile for a "
+            + "Rectangle to have an Area Value when a leg is less "
+            + "than or equal to Zero";
 
     @Override
     public double getArea() {
@@ -35,8 +36,8 @@ public class RectangularArea implements IAreaCalculator, IRectangleSides {
             sideTwo = convertedRadius;
         }
 
-        if (sideOne == 0 && sideTwo == 0) {
-            throw new IllegalArgumentException(SIDE_EQUAL_TO_ZERO);
+        if (sideOne <= 0 || sideTwo <= 0) {
+            throw new IllegalArgumentException(SIDE_OUT_OF_BOUNDS);
         } else {
             area = sideOne * sideTwo;
         }
