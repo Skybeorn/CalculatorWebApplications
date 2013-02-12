@@ -19,7 +19,7 @@ public class MissingHypotenuseCalculator implements
     private double triangleLegC = 0;
     private String NULL_OR_EMPTY_STRING = "Side Value can not be null or Empty";
     private String VALUE_CAN_NOT_BE_ZERO = "The Value of a Triangle Leg"
-            + " Cannot be Zero";
+            + " Cannot be less than or equal to Zero";
     private int ZERO = 0;
 
     @Override
@@ -39,7 +39,7 @@ public class MissingHypotenuseCalculator implements
         } else {
             String x = sideA;
             double convertedSideA = new Double(x);
-            if (convertedSideA == ZERO) {
+            if (convertedSideA <= ZERO) {
                 throw new IllegalArgumentException(VALUE_CAN_NOT_BE_ZERO);
             } else {
                 triangleLegA = convertedSideA;
@@ -51,7 +51,7 @@ public class MissingHypotenuseCalculator implements
         } else {
             String x = sideB;
             double convertedSideB = new Double(x);
-            if (convertedSideB == ZERO) {
+            if (convertedSideB <= ZERO) {
                 throw new IllegalArgumentException(VALUE_CAN_NOT_BE_ZERO);
             } else {
                 triangleLegB = convertedSideB;
