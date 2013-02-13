@@ -16,7 +16,7 @@
               action="FrontServletController?action=RectangleInput">
             <table border="1" width="230">
                 <tr>
-                    <td align="center">
+                    <td align="center"  >
                         <p>Rectangular Area Calculator </p>
                     </td>
                 </tr>

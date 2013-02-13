@@ -31,8 +31,7 @@ public class RectangleInput extends HttpServlet {
         calc.setRectangleSides(length, width);
         double area = calc.getArea();
         request.setAttribute("rectangleArea", area);
-        
-        
+         
         RequestDispatcher dispatch = request.getRequestDispatcher(RESULT_PAGE);
         dispatch.forward(request, response);
     }
